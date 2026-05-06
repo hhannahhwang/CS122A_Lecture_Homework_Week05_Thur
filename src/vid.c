@@ -19,7 +19,7 @@ int volatile* fb;
 int row, col, scroll_row;
 unsigned char* font;
 int WIDTH = 800;  // scan line width, default to 640
-int HEIGHT = 640;
+int HEIGHT = 600;
 char* tab = "0123456789ABCDEF";
 
 int fbuf_init() {
@@ -41,6 +41,10 @@ int fbuf_init() {
   *(volatile unsigned int*)(0x10120010) = 0x200000;
   *(volatile unsigned int*)(0x10120018) = 0x82B;
   cursor = 219;  // cursor = row 127 in font bitmap
+
+  for (i = 0; i < WIDTH * HEIGHT; i++) {
+      fb[i] = 0x00000000;  // black
+  }
 }
 
 int setpos(int r, int c) {

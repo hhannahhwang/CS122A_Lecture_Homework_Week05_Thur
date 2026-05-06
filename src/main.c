@@ -31,6 +31,9 @@ int show_bmp(char* p, int start_row, int start_col) {  // SAME as before
 }
 
 int main() {
+
+  kprintf("Starting...");
+
   char line[64];
   fbuf_init();
   setpos(13, 0);

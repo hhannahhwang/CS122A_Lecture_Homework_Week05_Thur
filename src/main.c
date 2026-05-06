@@ -32,8 +32,6 @@ int show_bmp(char* p, int start_row, int start_col) {  // SAME as before
 
 int main() {
 
-  kprintf("Starting...");
-
   char line[64];
   fbuf_init();
   setpos(13, 0);
@@ -48,7 +46,6 @@ int main() {
 
   kprintf("Decimal: %d\n", 1000000000);
   kprintf("Hexadecimal: 0x%x\n", 0xABCD);
-
 
   while (1) {
     color = GREEN;
